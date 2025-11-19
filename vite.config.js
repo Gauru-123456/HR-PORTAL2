@@ -3,8 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 44c8292 (Added Vite and Vercel config)
+
