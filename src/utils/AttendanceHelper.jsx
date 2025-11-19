@@ -6,28 +6,23 @@ export const columns = (statusChange) => [
     name: 'S No',
     selector: (row) => row.sno,
     width: '70px',
-    center: true,
   },
   {
     name: 'Name',
     selector: (row) => row.name,
-    sortable: true,
-    grow: 1,
-    wrap: true,
+    width: '130px',
   },
   {
     name: 'Emp ID',
-    selector: (row) => row.empId,
+    selector: (row) => row.employeeId,
     sortable: true,
-    grow: 1,
-    wrap: true,
+    width: '120px',
   },
   {
     name: 'Department',
     selector: (row) => row.department,
     sortable: true,
-    grow: 1,
-    wrap: true,
+    width: '120px',
   },
   {
     name: 'Action',
@@ -39,7 +34,6 @@ export const columns = (statusChange) => [
       />
     ),
     center: true,
-    minWidth: '350px',
   },
 ];
 
@@ -68,34 +62,34 @@ export const AttendanceHelper = ({ status, employeeId, statusChange }) => {
   return (
     <div>
       {status == null ? (
-        <div className="flex flex-wrap gap-1">
+        <div className="flex space-x-2">
           <button
-            className="px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors text-xs"
+            className="px-2 py-1 bg-green-500 text-white rounded"
             onClick={() => markEmployee('Present')}
           >
             Present
           </button>
           <button
-            className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors text-xs"
+            className="px-2 py-1 bg-red-500 text-white rounded"
             onClick={() => markEmployee('Absent')}
           >
             Absent
           </button>
           <button
-            className="px-2 py-1 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors text-xs"
+            className="px-2 py-1 bg-gray-500 text-white rounded"
             onClick={() => markEmployee('Sick')}
           >
             Sick
           </button>
           <button
-            className="px-2 py-1 bg-yellow-400 text-black rounded hover:bg-yellow-500 transition-colors text-xs"
+            className="px-2 py-1 bg-yellow-400 text-black rounded"
             onClick={() => markEmployee('Leave')}
           >
             Leave
           </button>
         </div>
       ) : (
-        <p className="bg-gray-200 text-center px-3 py-1 rounded font-medium capitalize text-sm">
+        <p className="bg-gray-200 text-center px-3 py-1 rounded font-medium capitalize">
           {status}
         </p>
       )}

@@ -6,21 +6,15 @@ export const columns = [
     {
         name: 'S No',
         selector: (row) => row.sno,
-        width: '80px',
-        center: true,
     },
     {
         name: 'Department Name',
         selector: (row) => row.dep_name,
-        sortable: true,
-        grow: 2,
-        wrap: true,
+        sortable: true
     },
     {
         name: 'Action',
         selector: (row) => row.action,
-        width: '200px',
-        center: true,
     },
 ]
 
@@ -50,19 +44,16 @@ export const DepartmentButtons = ({DepId, onDepartmentDelete}) => {
     }
 
     return (
-        <div className="flex gap-2">
-            <button 
-                className="px-3 py-1 bg-teal-600 text-white rounded hover:bg-teal-700 transition-colors text-sm"
-                onClick={() => navigate(`/admin-dashboard/department/${DepId}`)}
-            >
-                Edit
-            </button>
-            <button 
-                className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition-colors text-sm"
-                onClick={() => handleDelete(DepId)}
-            >
-                Delete
-            </button>
+        <div className="flex space-x-3">
+            <button className="px-9 py-1 bg-teal-600 text-white "
+            onClick={() => navigate(`/admin-dashboard/department/${DepId}`)}
+            >Edit</button>
+
+            <button className="px-3 py-1 bg-red-600 text-white"
+            onClick={() => handleDelete(DepId)}
+
+            >Delete</button>
+
         </div>
     )
 }

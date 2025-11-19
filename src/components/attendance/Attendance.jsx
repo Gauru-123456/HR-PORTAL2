@@ -61,39 +61,38 @@ const Attendance = () => {
   };
 
   return (
-    <div className="p-4 md:p-6">
+    <div className="p-6">
       <div className="text-center">
-        <h3 className="text-xl md:text-2xl font-bold">Manage Employees</h3>
+        <h3 className="text-2xl font-bold">Manage Employees</h3>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mt-4">
+      <div className="flex justify-between items-center mt-4">
         <input
           type="text"
           placeholder="Search by Employee Name"
-          className="w-full lg:w-auto px-4 py-2 border rounded"
+          className="px-6 py-0.5 border"
           onChange={handleFilter}
         />
-        <p className="text-sm md:text-base lg:text-lg text-center">
+        <p className="text-2xl">
           Mark Employees for{' '}
-          <span className="font-bold underline">
+          <span className="text-2xl font-bold underline">
             {new Date().toISOString().split('T')[0]}
           </span>
         </p>
         <Link
           to="/admin-dashboard/attendance-report"
-          className="w-full lg:w-auto px-4 py-2 bg-teal-600 rounded text-white text-center hover:bg-teal-700 transition-colors"
+          className="px-4 py-1 bg-teal-600 rounded text-white"
         >
           Attendance Report
         </Link>
       </div>
 
-      <div className="mt-6 overflow-x-auto">
+      <div className="mt-6">
         <DataTable
           columns={columns(statusChange)}
           data={filteredAttendance}
           progressPending={loading}
           pagination
-          responsive
         />
       </div>
     </div>
